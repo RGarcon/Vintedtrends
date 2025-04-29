@@ -1,0 +1,47 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #fdfcf9;
+  color: #333;
+}
+
+.container {
+  max-width: 700px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #111;
+}
+
+.slogan {
+  font-style: italic;
+  margin-bottom: 30px;
+}
+
+.trend-card {
+  background: #fff;
+  border: 1px solid #eaeaea;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.trend-card h2 {
+  margin: 0 0 10px;
+}
+
+.price {
+  font-weight: bold;
+  color: #157347;
+}
+
+footer {
+  margin-top: 40px;
+  font-size: 0.9rem;
+  color: #777;
+}
