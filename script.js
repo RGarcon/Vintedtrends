@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const apiURL = 'https://ac940e09-a2d1-4cf8-99e5-d63ffc2f1659-00-2ovrgmry8jhfg.janeway.replit.dev/trends';
+  const apiURL = 'https://ac940e09-a2d1-4cf8-99e5-d63ffc2f1659-00-2ovrgmry8jhfg.janeway.replit.dev';
   const contentDiv = document.getElementById('content');
 
   fetch(apiURL)
