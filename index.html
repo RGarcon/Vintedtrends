@@ -3,35 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Alerte Tendance</title>
-  <link rel="stylesheet" href="styles.css" />
+  <title>Tendances Revente</title>
+  <style>
+    body { font-family: sans-serif; padding: 2em; background: #fdfdfd; color: #333; }
+    h1 { font-size: 1.6em; margin-bottom: 1em; }
+    li { margin: 0.5em 0; background: #eef; padding: 0.8em; border-radius: 6px; }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Alerte Tendance</h1>
-    <p class="slogan">Ce qui se vend *en ce moment* sur Vinted & Leboncoin</p>
-    
-    <div class="trend-card">
-      <h2>Catégorie : Sneakers</h2>
-      <p>Exemple : Nike Dunk Low, Adidas Campus 00s</p>
-      <span class="price">Prix moyen : 85 €</span>
-    </div>
+  <h1>Articles Tendance sur TikTok / Pinterest</h1>
+  <ul id="trend-list"><li>Chargement...</li></ul>
 
-    <div class="trend-card">
-      <h2>Catégorie : Mode Y2K</h2>
-      <p>Exemple : Jean taille basse, crop tops, sacs baguette</p>
-      <span class="price">Prix moyen : 20 - 40 €</span>
-    </div>
-
-    <div class="trend-card">
-      <h2>Catégorie : Maillots de foot</h2>
-      <p>Exemple : anciens maillots vintage ou éditions spéciales</p>
-      <span class="price">Prix moyen : 45 - 100 €</span>
-    </div>
-
-    <footer>
-      <p>Données extraites des tendances sur les réseaux et marketplaces</p>
-    </footer>
-  </div>
+  <script>
+    fetch("https://trend-backend.username.repl.co/trends") // remplace par ton lien exact
+      .then(res => res.json())
+      .then(data => {
+        const ul = document.getElementById("trend-list");
+        ul.innerHTML = "";
+        data.forEach(tag => {
+          const li = document.createElement("li");
+          li.textContent = "#" + tag;
+          ul.appendChild(li);
+        });
+      })
+      .catch(err => {
+        document.getElementById("trend-list").innerHTML = "<li>Erreur de chargement</li>";
+      });
+  </script>
 </body>
 </html>
