@@ -1,34 +1,25 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Tendances Revente</title>
-  <style>
-    body { font-family: sans-serif; padding: 2em; background: #fdfdfd; color: #333; }
-    h1 { font-size: 1.6em; margin-bottom: 1em; }
-    li { margin: 0.5em 0; background: #eef; padding: 0.8em; border-radius: 6px; }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tendances TikTok pour Vinted</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <!-- Fichier de styles CSS -->
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Articles Tendance sur TikTok / Pinterest</h1>
-  <ul id="trend-list"><li>Chargement...</li></ul>
-
-  <script>
-    fetch("https://replit.com/@rgarcon31/trend-backend?v=1") // remplace par ton lien exact
-      .then(res => res.json())
-      .then(data => {
-        const ul = document.getElementById("trend-list");
-        ul.innerHTML = "";
-        data.forEach(tag => {
-          const li = document.createElement("li");
-          li.textContent = "#" + tag;
-          ul.appendChild(li);
-        });
-      })
-      .catch(err => {
-        document.getElementById("trend-list").innerHTML = "<li>Erreur de chargement</li>";
-      });
-  </script>
+  <div class="container">
+    <h1>Tendances TikTok pour Vinted</h1>
+    <!-- Contenu dynamique : message de chargement ou liste de hashtags -->
+    <div id="content">
+      <p>Chargement...</p>
+    </div>
+  </div>
+  <!-- Script JavaScript -->
+  <script src="script.js"></script>
 </body>
 </html>
