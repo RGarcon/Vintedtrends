@@ -1,16 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
-const apiURL = 'https://vinted-trends-backend.onrender.com/trends';
+  const apiURL = 'https://vinted-trends-backend.onrender.com/trends';
   const contentDiv = document.getElementById('content');
 
   fetch(apiURL)
     .then(response => {
-      if (!response.ok) {
-        throw new Error('Erreur de réponse du réseau');
-      }
+      if (!response.ok) throw new Error('Erreur de réponse du réseau');
       return response.json();
     })
     .then(hashtags => {
-      // Effacer le message de chargement
       contentDiv.innerHTML = '';
 
       if (hashtags.length > 0) {
@@ -22,7 +19,6 @@ const apiURL = 'https://vinted-trends-backend.onrender.com/trends';
           li.classList.add('tag-item');
 
           const a = document.createElement('a');
-          // Supprimer le caractère # pour construire le lien
           let tagName = tag.startsWith('#') ? tag.slice(1) : tag;
           a.textContent = '#' + tagName;
           a.href = `https://www.tiktok.com/tag/${tagName}`;
