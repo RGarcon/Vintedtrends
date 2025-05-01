@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const apiURL = 'https://vinted-trends-backend-1.onrender.com';
+const apiURL = 'https://vinted-trends-backend.onrender.com/trends';
   const contentDiv = document.getElementById('content');
 
   fetch(apiURL)
