@@ -4,11 +4,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   fetch(apiURL)
     .then(response => {
-      if (!response.ok) throw new Error('Erreur de réponse du réseau');
+      if (!response.ok) {
+        throw new Error('Erreur de réponse du réseau');
+      }
       return response.json();
     })
     .then(hashtags => {
-      contentDiv.innerHTML = '';
+      contentDiv.innerHTML = ''; // vide l’ancien contenu
 
       if (hashtags.length > 0) {
         const list = document.createElement('ul');
